@@ -1,5 +1,4 @@
 var exec = require("child_process").exec;
-var req = require("request");
 
 function start(response) {
     console.log("Request handler 'start' was called");
@@ -43,10 +42,12 @@ function calc(response) {
 }
 
 function hantemp(response) {
+    var req = require("request");
     console.log("Hello Han!");
 
     req("http://hangang.dkserver.wo.tc/", function (err, res, body) {
-        console.log("Hangang's temperature is : " + body);
+        datas = JSON.parse(body);
+        console.log("Hangang's temperature is : " + datas.temp);
     });
 
 }
