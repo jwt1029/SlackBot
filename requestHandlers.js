@@ -21,6 +21,11 @@ function admin(response) {
     console.log("You don't have permission!");
 }
 
+function calc() {
+    console.log("Someone tried calc!");
+}
+
 exports.start = start;
 exports.upload = upload;
 exports.admin = admin;
+exports.calc = calc;
