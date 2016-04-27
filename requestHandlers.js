@@ -43,8 +43,6 @@ function calc(response) {
 
 function hantemp(response) {
     var req = require("request");
-    var iconv = require('iconv-lite');
-    iconv.extendNodeEncodings();
     console.log("Hello Han!");
 
     req("http://hangang.dkserver.wo.tc/", function (err, res, body) {
@@ -52,7 +50,7 @@ function hantemp(response) {
         console.log("Hangang's temperature is : " + datas.temp);
         var jsonData = JSON.stringify({
             "response_type": "in_channel",
-            "text": "HanGang's temperature is : " + datas.temp + " ¡ÆC".toString("euckr"),
+            "text": "HanGang's temperature is : " + datas.temp + " 'C"
         });
         response.writeHead(200, { "Content-Type": "application/json" });
 
