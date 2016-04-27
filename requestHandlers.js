@@ -50,9 +50,9 @@ function hantemp(response) {
         console.log("Hangang's temperature is : " + datas.temp);
         var jsonData = JSON.stringify({
             "response_type": "in_channel",
-            "text": "HanGang's temperature is : " + datas.temp + " ¨¬C",
+            "text": "HanGang's temperature is : " + datas.temp + " 'C",
         });
-        response.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+        response.writeHead(200, { "Content-Type": "application/json;" });
 
         response.write(jsonData);
         response.end();
