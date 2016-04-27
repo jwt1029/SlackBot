@@ -9,7 +9,7 @@ function go(route, handle) {
 		route(handle, pathname, response);
 	}
 	
-	http.createServer(onRequest).listen(8888);
+	http.createServer(onRequest).listen(process.env.PORT);
 	console.log("Server has started!");
 }
 
