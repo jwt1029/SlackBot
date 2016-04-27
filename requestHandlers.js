@@ -24,9 +24,7 @@ function admin(response) {
 function calc(response) {
     console.log("Someone tried calc!");
 
-    response.writeHead(200, { "Content-Type": "application/json" });
-
-    response.write({
+    var jsonData = JSON.stringify({
         "response_type": "in_channel",
         "text": "New Help Ticket Received:",
         "attachments": [
@@ -37,6 +35,9 @@ function calc(response) {
             }
         ]
     });
+    response.writeHead(200, { "Content-Type": "application/json" });
+
+    response.write(jsonData);
     response.end();
 }
 
