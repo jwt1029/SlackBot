@@ -11,7 +11,7 @@ function go(route, handle) {
 		route(handle, pathname, response);
 	}
 	
-	http.createServer(onRequest).listen(process.env.PORT);
+	http.createServer(onRequest).listen(8888);
 	console.log("Server has started!");
 }
 
