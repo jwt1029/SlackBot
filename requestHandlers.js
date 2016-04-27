@@ -42,6 +42,7 @@ function calc(response) {
 }
 
 function hantemp(response) {
+    console.log("Hello Han!");
     var req = require("request");
 
     request("http://hangang.dkserver.wo.tc/", function (err, res, body) {
