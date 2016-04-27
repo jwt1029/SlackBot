@@ -41,7 +41,17 @@ function calc(response) {
     response.end();
 }
 
+function hantemp(response) {
+    var req = require("request");
+
+    request("http://hangang.dkserver.wo.tc/", function (err, res, body) {
+        console.log("Hangang's temperature is : " + body);
+    });
+    
+}
+
 exports.start = start;
 exports.upload = upload;
 exports.admin = admin;
 exports.calc = calc;
+exports.hantemp = hantemp;
