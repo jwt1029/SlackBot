@@ -21,7 +21,7 @@ function admin(response) {
     console.log("You don't have permission!");
 }
 
-function calc() {
+function calc(response) {
     console.log("Someone tried calc!");
     response.writeHead(200, {"Content-Type" : "text/plain"});
     response.write("1 + 1 = 2!");
