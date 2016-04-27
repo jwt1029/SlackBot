@@ -48,6 +48,14 @@ function hantemp(response) {
     req("http://hangang.dkserver.wo.tc/", function (err, res, body) {
         datas = JSON.parse(body);
         console.log("Hangang's temperature is : " + datas.temp);
+        var jsonData = JSON.stringify({
+            "response_type": "in_channel",
+            "text": "HanGang's temperature is : " + datas.temp + " ¡ÆC",
+        });
+        response.writeHead(200, { "Content-Type": "application/json" });
+
+        response.write(jsonData);
+        response.end();
     });
 
 }
