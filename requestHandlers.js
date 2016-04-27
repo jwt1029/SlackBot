@@ -52,7 +52,7 @@ function hantemp(response) {
             "response_type": "in_channel",
             "text": "HanGang's temperature is : " + datas.temp + " ¨¬C",
         });
-        response.writeHead(200, { "Content-Type": "application/json" });
+        response.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
 
         response.write(jsonData);
         response.end();
