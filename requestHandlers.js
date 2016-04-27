@@ -23,8 +23,19 @@ function admin(response) {
 
 function calc(response) {
     console.log("Someone tried calc!");
-    response.writeHead(200, {"Content-Type" : "text/plain"});
-    response.write("1 + 1 = 2!");
+    
+    response.writeHead(200, {"Content-Type" : "text/json"});
+    
+    response.write({
+    "text": "New Help Ticket Received:",
+    "attachments": [
+        {
+            "title": "App hangs on reboot",
+            "title_link": "http://domain.com/ticket/123456",
+            "text": "If I restart my computer without quitting your app, it stops the reboot sequence.\nhttp://domain.com/ticket/123456",
+        }
+    ]
+});
     response.end();
 }
 
