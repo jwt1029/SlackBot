@@ -23,6 +23,9 @@ function admin(response) {
 
 function calc() {
     console.log("Someone tried calc!");
+    response.writeHead(200, {"Content-Type" : "text/plain"});
+    response.write("1 + 1 = 2!");
+    response.end();
 }
 
 exports.start = start;
