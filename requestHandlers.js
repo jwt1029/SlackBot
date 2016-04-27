@@ -24,7 +24,7 @@ function admin(response) {
 function calc(response) {
     console.log("Someone tried calc!");
 
-    response.writeHead(200, { "Content-Type": "text/json" });
+    response.writeHead(200, { "Content-Type": "application/json" });
 
     response.write({
         "response_type": "in_channel",
