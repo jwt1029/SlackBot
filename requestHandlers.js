@@ -2,9 +2,9 @@ var exec = require("child_process").exec;
 
 function start(response) {
     console.log("Request handler 'start' was called");
-    
-    exec("dir", function(error, stdout, stderr) {
-        response.writeHead(200, {"Content-Type" : "text/plain; charset=euckr"});
+
+    exec("dir", function (error, stdout, stderr) {
+        response.writeHead(200, { "Content-Type": "text/plain; charset=euckr" });
         response.write(stdout);
         response.end();
     });
@@ -12,7 +12,7 @@ function start(response) {
 
 function upload(response) {
     console.log("Request handler 'upload' was called");
-    response.writeHead(200, {"Content-Type" : "text/plain"});
+    response.writeHead(200, { "Content-Type": "text/plain" });
     response.write("Hello Upload");
     response.end();
 }
@@ -23,19 +23,20 @@ function admin(response) {
 
 function calc(response) {
     console.log("Someone tried calc!");
-    
-    response.writeHead(200, {"Content-Type" : "text/json"});
-    
+
+    response.writeHead(200, { "Content-Type": "text/json" });
+
     response.write({
-    "text": "New Help Ticket Received:",
-    "attachments": [
-        {
-            "title": "App hangs on reboot",
-            "title_link": "http://domain.com/ticket/123456",
-            "text": "If I restart my computer without quitting your app, it stops the reboot sequence.\nhttp://domain.com/ticket/123456",
-        }
-    ]
-});
+        "response_type": "in_channel",
+        "text": "New Help Ticket Received:",
+        "attachments": [
+            {
+                "title": "App hangs on reboot",
+                "title_link": "http://domain.com/ticket/123456",
+                "text": "If I restart my computer without quitting your app, it stops the reboot sequence.\nhttp://domain.com/ticket/123456",
+            }
+        ]
+    });
     response.end();
 }
 
