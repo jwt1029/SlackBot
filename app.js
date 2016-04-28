@@ -7,7 +7,7 @@ function go(route, handle) {
 		var text = querystring.parse(request.body);
 		console.log("Received data : " + text + " | " + text.text + " | " + request.body.text + " | " + request.body.user_name);
 		var pathname = url.parse(request.url).pathname;
-
+ 
 /*
 		var POST_DATA = [];
 		request.on('data', function (data) {
