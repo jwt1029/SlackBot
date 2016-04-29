@@ -98,12 +98,6 @@ table .notice{
  color: #aaa;
 }
 
-.join_body dd input{
- width: 360px;
- height: 40px;
- padding: 0 20px;
- font-size: 20px;
-}
 
 .join_body dd select{
  font-size: 20px;
@@ -111,15 +105,17 @@ table .notice{
  height: 40px;
 }
 
-#m_tel2, #m_tel3{
- width: 110px;
- height: 36px;
+#m_tel1, #m_tel2, #m_tel3{
+ width: 80px;
+ height: 20px;
  padding : 0;
 }
 
 #m_gender{
- width: 100px;
+ width: 20px;
 }
+
+
 
 /*join_footer*/
 .wrapper_table .join_footer{

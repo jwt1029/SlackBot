@@ -4,9 +4,9 @@
 <head>
   <meta charset='utf-8' />
   <title>boards</title>
-  <link rel="stylesheet" type="text/css" href="style/mycss.css">
-  <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-  <script type="text/javascript" src="js/myscript2.js"></script>
+  <link rel="stylesheet" type="text/css" href="./style/mycss.css">
+  <script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="./js/myscript.js"></script>
 </head>
 
 <body>
@@ -16,7 +16,6 @@
       <input type="hidden" id="id_ch" name="id_ch" value="false" />
       <input type="hidden" id="pass_ch" name="pass_ch" value="false" />
       <input type="hidden" id="email_ch" name="email_ch" value="false" />
-      <input type="hidden" id="m_tel" name="m_tel" value="" />
       <div class="wrapper_table">
         <div class="join_header">
           <p>회원 가입</p>
@@ -55,19 +54,15 @@
             <dt><label>Birth Date</label></dt>
             <dd><input id="m_date" name="m_date" type="date" min="1930-01-01" max='2010-12-31'></dd>
             <dt><label>Phone Number</label></dt>
-            <dd class="tel"><select id="m_tel1" name="tel1"><option selected>010</option>
-      <option>011</option>
-      <option>016</option>
-      <option>017</option>
-      <option>019</option>
-     </select> &nbsp-&nbsp
-              <input id="m_tel2" name="m_tel2" type="text" minlength="3" maxlength="4" size="4" required/> &nbsp-&nbsp
-              <input id="m_tel3" name="m_tel3" type="text" maxlength="4" minlength="4" size="4" required/>
-            </dd>
+            <input id="m_tel1" name="m_tel1" type="text" minlength="3" maxlength="3" size="4" required/> &nbsp-&nbsp
+            <input id="m_tel2" name="m_tel2" type="text" minlength="3" maxlength="4" size="4" required/> &nbsp-&nbsp
+            <input id="m_tel3" name="m_tel3" type="text" maxlength="4" minlength="4" size="4" required/>
+
             <dt><label>Gender</label></dt>
-            <dd><input id="m_gender" name="m_gender" type="radio" value="남" required>남</input>&nbsp&nbsp<input name="m_gender"
-                id="m_gender" type="radio" value="여" required>여</input>
-            </dd>
+              <input id="m_gender" name="m_gender" type="radio" value="남" required>남</input>
+              &nbsp&nbsp
+              <input name="m_gender" id="m_gender" type="radio" value="여" required>여</input>
+
             <dt><label>Email</label></dt>
             <dd><input id="m_email" name="m_email" type="text" placeholder="E-mail" /></dd>
             <div class='arrow_box' id="email_notice" style="display:none;">

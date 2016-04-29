@@ -1,4 +1,5 @@
-var http = require("http");
+var express = require("express");
+var app = express();
 var url = require("url");
 var querystring = require("querystring");
 
@@ -12,7 +13,7 @@ function go(route, handle) {
 		var pathname = url.parse(request.url).pathname;
 
 		var fs = require("fs");
-		if (request.url.indexOf('.css') != -1) { //req.url has the pathname, check if it conatins '.css'
+		if (request.url.indexOf('mycss.css') != -1) { //req.url has the pathname, check if it conatins '.css'
 
 			fs.readFile('./web/style/mycss.css', function (err, data) {
 				if (err) console.log(err);
@@ -21,6 +22,8 @@ function go(route, handle) {
 				response.end();
 			});
 		}
+		
+		
 		else {
 			/*
 					var POST_DATA = [];
