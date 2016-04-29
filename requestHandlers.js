@@ -1,13 +1,28 @@
 var exec = require("child_process").exec;
 
 function start(response) {
-    console.log("Request handler 'start' was called");
+    var fs = require("fs");
+    var iconv = require('iconv-lite');
+    iconv.extendNodeEncodings();
 
-    exec("dir", function (error, stdout, stderr) {
-        response.writeHead(200, { "Content-Type": "text/plain; charset=euckr" });
-        response.write(stdout);
-        response.end();
+    console.log("Request handler 'start' was called");
+    fs.readFile("./index.html", function (error, data) {
+        if (error)
+            console.log(error);
+        else {
+            response.writeHead(200, { "Content-Type": "text/html" });
+            response.write(iconv.decode(data, 'EUC-KR').toString());
+            response.end();
+        }
     });
+    /*
+    exec("dir", function (error, stdout, stderr) {
+
+        //        response.writeHead(200, { "Content-Type": "text/plain; charset=euckr" });
+        //        response.write(stdout);
+        //        response.end();
+    });
+    */
 }
 
 function upload(response) {
@@ -52,7 +67,7 @@ function hantemp(response) {
             "response_type": "in_channel",
             "text": "HanGang's temperature is : " + datas.temp + " 'C"
         });
-        response.writeHead(200, { "Content-Type":"application/json" });
+        response.writeHead(200, { "Content-Type": "application/json" });
 
         response.write(jsonData);
         response.end();
@@ -60,6 +75,27 @@ function hantemp(response) {
 
 }
 
+function register(response) {
+    var fs = require("fs");
+    var iconv = require('iconv-lite');
+    iconv.extendNodeEncodings();
+
+    console.log("Request handler 'start' was called");
+
+    fs.readFile("./web/index.html", function (error, data) {
+        if (error)
+            console.log(error);
+        else {
+            response.writeHead(200, { "Content-Type": "text/html" });
+            response.write(iconv.decode(data, 'EUC-KR').toString());
+            response.end();
+        }
+    });
+
+
+}
+
+exports.register = register;
 exports.start = start;
 exports.upload = upload;
 exports.admin = admin;
