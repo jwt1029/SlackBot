@@ -1,5 +1,4 @@
-var express = require("express");
-var app = express();
+var http = require("http");
 var url = require("url");
 var querystring = require("querystring");
 
@@ -23,6 +22,15 @@ function go(route, handle) {
 			});
 		}
 		
+		if (request.url.indexOf('myscript.js') != -1) { //req.url has the pathname, check if it conatins '.css'
+
+			fs.readFile('./web/js/myscript.js', function (err, data) {
+				if (err) console.log(err);
+				response.writeHead(200);
+				response.write(data);
+				response.end();
+			});
+		}
 		
 		else {
 			/*
@@ -39,7 +47,7 @@ function go(route, handle) {
 		}
 	}
 
-	http.createServer(onRequest).listen(process.env.PORT);
+	http.createServer(onRequest).listen(8888);
 	console.log("Server has started!");
 }
 
